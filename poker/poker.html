@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="pokerApp">
+<head>
+	<meta charset="utf-8">
+	<title>Poker Rankings with AngularJS</title>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.4/angular.min.js"></script>
+	<script type="text/javascript" src="controller.js"></script>
+</head>
+<body ng-controller="PokerHandCtrl">
+
+	<header>
+		<h1>Poker Rankings with AngularJS</h1>
+	</header>
+
+	<section id="interactive">
+		<h2>Try it!</h2>
+		<form name="pokerForm">
+			<label>Poker hand:</label>
+			<input name="hand" type="text" ng-model="hand" ng-change="change()">
+		</form>
+		<div id="message">
+			{{ message }}
+		</div>
+	</section>
+
+	<section id="samples">
+		<h2>Samples</h2>
+		<table>
+			<thead>
+				<th>Hand</th>
+				<th>Rank</th>
+			</thead>
+			<tbody>
+				<tr ng-repeat="sample in samples">
+					<td>{{sample.hand}}</td>
+					<td>{{sample.rank}}</td>
+				</tr>
+			</tbody>
+		</table>
+	</section>
+
+	<footer>
+		<p>&copy; 2014 Craig McDaniel</p>
+	</footer>
+</body>
+</html>
